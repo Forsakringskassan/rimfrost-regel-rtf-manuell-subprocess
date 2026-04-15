@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 0.0.2 (2026-04-15)
+
+### Bug Fixes
+
+-  incorrect path to RegelService ([65498](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/654982581832b5b) Nils Elveros)  
+
 ## 0.0.1 (2026-04-14)
 
 ### Features
