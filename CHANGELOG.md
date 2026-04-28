@@ -2,6 +2,16 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.0.0 (2026-04-28)
+
+### Breaking changes
+
+-  release 1.0 ([53b11](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/53b11bdf8d696dd) Nils Elveros)  
+
+### Features
+
+-  release 1.0 ([53b11](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/53b11bdf8d696dd) Nils Elveros)  
+
 ## 0.0.3 (2026-04-17)
 
 ### Bug Fixes
