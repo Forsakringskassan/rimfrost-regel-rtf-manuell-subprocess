@@ -2,6 +2,20 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.0 (2026-05-18)
+
+### Bug Fixes
+
+-  **deps**  update dependency se.fk.rimfrost.framework.regel:rimfrost-framework-regel-asyncapi to v1.0.2 ([f0167](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/f016779a78dd588) renovate[bot])  
+
+### Other changes
+
+**feat/FKPOC-772: update rtf-manuell-subprocess to return RegelProcessResult and add rimfrost-framework-process dependency**
+
+
+[0cb8a](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/0cb8ab354760150) Jorgen Lindstrom *2026-05-13 11:33:45*
+
+
 ## 1.0.0 (2026-04-28)
 
 ### Breaking changes
