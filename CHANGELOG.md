@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.5 (2026-06-15)
+
+### Bug Fixes
+
+-  add response topic prop ([2f637](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/2f6370a8ee98a15) Nils Elveros)  
+
 ## 1.1.4 (2026-06-10)
 
 ### Bug Fixes
