@@ -2,6 +2,13 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.6 (2026-06-26)
+
+### Bug Fixes
+
+-  use result instead of throw ([88328](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/883280a624f4889) Nils Elveros)  
+-  add retry and timeout ([d443f](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/d443f3ac020d201) Nils Elveros)  
+
 ## 1.1.5 (2026-06-15)
 
 ### Bug Fixes
