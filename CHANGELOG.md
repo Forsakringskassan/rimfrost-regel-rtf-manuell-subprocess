@@ -2,6 +2,17 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.7 (2026-09-09)
+
+### Bug Fixes
+
+-  split komplettering in own bpmn file ([868f6](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/868f6ccfb34ec02) Nils Elveros)  
+-  added komplettering ([b2635](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/b2635d89dc46916) Nils Elveros)  
+-  **deps**  update dependency se.fk.rimfrost.framework.process:rimfrost-framework-process to v1.6.3 ([49c28](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/49c28d10e098112) renovate[bot])  
+
+### Dependency updates
+
+- pin forsakringskassan/.github action to d1349e6 ([9058f](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/9058fec5466c4bc) renovate[bot])  
 ## 1.1.6 (2026-06-26)
 
 ### Bug Fixes
