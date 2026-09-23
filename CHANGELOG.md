@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.8 (2026-09-23)
+
+### Bug Fixes
+
+-  Bump dependency versions in preparation for 1.2 ([3aeec](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/3aeec79b4e06be0) Lars Persson)  
+
 ## 1.1.7 (2026-09-09)
 
 ### Bug Fixes
