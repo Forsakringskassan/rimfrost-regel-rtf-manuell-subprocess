@@ -29,8 +29,6 @@
   <bpmn2:message id="_428739B8-C962-4EBE-A16B-6E2B5133D50B_OutMessage" itemRef="_428739B8-C962-4EBE-A16B-6E2B5133D50B_OutMessageType" />
   <bpmn2:message id="_EB1970E1-7AA3-44EC-98B2-981698344C2A_InMessage" itemRef="_EB1970E1-7AA3-44EC-98B2-981698344C2A_InMessageType" />
   <bpmn2:message id="_EB1970E1-7AA3-44EC-98B2-981698344C2A_OutMessage" itemRef="_EB1970E1-7AA3-44EC-98B2-981698344C2A_OutMessageType" />
-  <bpmn2:message id="_2wy3wBrDED-dV47vrklDJQ" itemRef="rtf-manuell-responsesType" name="rtf-manuell-responses" />
-  <bpmn2:message id="_2wy3wRrDED-dV47vrklDJQ" itemRef="rtf-manuell-requestsType" name="rtf-manuell-requests" />
   <bpmn2:message id="_50CA5CDE-1898-43C4-9B4D-C869F9B23E88" itemRef="Type" name="" />
   <bpmn2:message id="_1874516D-0943-43CC-A075-225C6CDAA449" itemRef="Type" name="" />
   <bpmn2:message id="_839EA6F0-D357-4ACC-8150-16BE43ADE701" itemRef="Type" name="" />
@@ -39,8 +37,6 @@
   <bpmn2:message id="_66B60399-DADE-406C-A93D-2D337D44C58A" itemRef="rtf-manuell-responsesType" name="rtf-manuell-responses" />
   <bpmn2:message id="_163BBA5E-8DD1-40BA-B4D4-31E0BFD31AFE" itemRef="Type" name="" />
   <bpmn2:message id="_755DEB61-CF83-4569-872B-4EDF31B0E9E0" itemRef="Type" name="" />
-  <bpmn2:message id="_305638F7-686B-47B8-84E7-D6CB322B352A" itemRef="rtf-manuell-komplettering-requestsType" name="rtf-manuell-komplettering-requests" />
-  <bpmn2:message id="_80A45ACF-03C2-4FC7-B440-31F598ACEBDC" itemRef="rtf-manuell-komplettering-responsesType" name="rtf-manuell-komplettering-responses" />
   <bpmn2:message id="_EFAEEC0E-4A24-4B54-B57B-2F2D5DC327A8" itemRef="Type" name="" />
   <bpmn2:message id="_0ADEE96D-74F5-446F-AC9D-E0D5962BAFAF" itemRef="Type" name="" />
   <bpmn2:message id="_AFCE7C52-C152-4046-8E3B-4A3E7196B3AC" itemRef="Type" name="" />
