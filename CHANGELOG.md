@@ -2,6 +2,15 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.9 (2026-09-25)
+
+### Bug Fixes
+
+-  remove unused messages ([528e8](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/528e84ded69b356) Nils Elveros)  
+-  split into three bpmn files ([81ba4](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/81ba443c956b487) Nils Elveros)  
+
+## rimfrost-1_2 (2026-09-23)
+
 ## 1.1.8 (2026-09-23)
 
 ### Bug Fixes
