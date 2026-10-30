@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.11 (2026-10-30)
+
+### Bug Fixes
+
+-  remove replyto from regelrequest ([5f635](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/5f635ba624e85dd) Nils Elveros)  
+
 ## 1.1.10 (2026-10-30)
 
 ### Bug Fixes
