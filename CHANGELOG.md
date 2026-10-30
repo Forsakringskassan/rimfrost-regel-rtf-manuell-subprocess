@@ -2,6 +2,13 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.10 (2026-10-30)
+
+### Bug Fixes
+
+-  bump rimfrost-framework-regel-asyncapi to 1.2.0 and rimfrost-framework-process to 1.6.7 ([f03d5](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/f03d53de7f7cfcb) Ulf Slunga)  
+-  rename and simplify CI/release workflows ([5568e](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/5568e96e59b06ab) Ulf Slunga)  
+
 ## 1.1.9 (2026-10-26)
 
 ### Bug Fixes
