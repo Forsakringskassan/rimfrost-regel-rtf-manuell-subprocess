@@ -2,6 +2,24 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.12 (2026-11-10)
+
+### Bug Fixes
+
+-  update pom ([f0e81](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/f0e81df543ee1e1) Nils Elveros)  
+
+### Dependency updates
+
+- update forsakringskassan/.github digest to cbc0db8 ([f1516](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/f1516faa1d7d024) renovate[bot])  
+### Other changes
+
+**Update pom.xml**
+
+* Co-authored-by: larpersso &lt;254442132+larpersso@users.noreply.github.com&gt; 
+
+[b9fe9](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/b9fe9d60f36bb19) NilsElveros *2026-11-10 07:58:14*
+
+
 ## 1.1.11 (2026-10-30)
 
 ### Bug Fixes
