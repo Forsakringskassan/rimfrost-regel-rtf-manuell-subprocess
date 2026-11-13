@@ -25,6 +25,7 @@
   <bpmn2:itemDefinition id="_54C2796E-663B-4E54-A6E9-BC6AB0D031C7" structureRef="se.fk.rimfrost.framework.regel.RegelErrorInformation" />
   <bpmn2:itemDefinition id="_45AC32BE-2426-43B8-A409-D0119C9E4EBA" structureRef="Integer" />
   <bpmn2:itemDefinition id="Type" structureRef="" />
+  <bpmn2:itemDefinition id="regel-oul-cancelledType" structureRef="se.fk.rimfrost.framework.regel.oul.RegelOulCancelledMessagePayloadData" />
   <bpmn2:message id="_428739B8-C962-4EBE-A16B-6E2B5133D50B_InMessage" itemRef="_428739B8-C962-4EBE-A16B-6E2B5133D50B_InMessageType" />
   <bpmn2:message id="_428739B8-C962-4EBE-A16B-6E2B5133D50B_OutMessage" itemRef="_428739B8-C962-4EBE-A16B-6E2B5133D50B_OutMessageType" />
   <bpmn2:message id="_EB1970E1-7AA3-44EC-98B2-981698344C2A_InMessage" itemRef="_EB1970E1-7AA3-44EC-98B2-981698344C2A_InMessageType" />
@@ -45,6 +46,9 @@
   <bpmn2:message id="_B9795C1A-F67E-4E14-811B-0E77119E0145" itemRef="Type" name="" />
   <bpmn2:message id="_E20C3963-EAB9-4E0B-8D98-085D48474299" itemRef="Type" name="" />
   <bpmn2:message id="_40780D3D-1E67-4B8F-89F4-F36EE43324EE" itemRef="Type" name="" />
+  <bpmn2:message id="_B56D243D-D83A-40E0-8E4C-A95DC2B09431" itemRef="Type" name="" />
+  <bpmn2:message id="_14ED4FEC-FC65-468B-A364-EC6147CF5875" itemRef="Type" name="" />
+  <bpmn2:message id="_4B097670-D119-498E-B266-60C3324730CA" itemRef="regel-oul-cancelledType" name="rtf-manuell-oul-cancelled" />
   <bpmn2:interface id="_428739B8-C962-4EBE-A16B-6E2B5133D50B_ServiceInterface" name="se.fk.rimfrost.framework.process.RegelService" implementationRef="se.fk.rimfrost.framework.process.RegelService">
     <bpmn2:operation id="_428739B8-C962-4EBE-A16B-6E2B5133D50B_ServiceOperation" name="createRegelRequest" implementationRef="createRegelRequest">
       <bpmn2:inMessageRef>_428739B8-C962-4EBE-A16B-6E2B5133D50B_InMessage</bpmn2:inMessageRef>
@@ -61,6 +65,10 @@
     <bpmn2:operation id="_3A0116D3-93BF-4A2B-ADBA-8D20958D26EF" name="handleTimeout">
       <bpmn2:inMessageRef>_839EA6F0-D357-4ACC-8150-16BE43ADE701</bpmn2:inMessageRef>
       <bpmn2:outMessageRef>_6A551BAF-0337-4307-9B60-4160B3F8389A</bpmn2:outMessageRef>
+    </bpmn2:operation>
+    <bpmn2:operation id="_2A176C93-6664-4A6C-94F6-DA2D5E564115" name="createRegelOulCancelled">
+      <bpmn2:inMessageRef>_B56D243D-D83A-40E0-8E4C-A95DC2B09431</bpmn2:inMessageRef>
+      <bpmn2:outMessageRef>_14ED4FEC-FC65-468B-A364-EC6147CF5875</bpmn2:outMessageRef>
     </bpmn2:operation>
     <bpmn2:operation id="_B9D57F6E-20E7-42E5-A087-3C5294BF3302" name="handleTimeout">
       <bpmn2:inMessageRef>_163BBA5E-8DD1-40BA-B4D4-31E0BFD31AFE</bpmn2:inMessageRef>
@@ -100,6 +108,7 @@
     <bpmn2:property id="errorInfo" name="errorInfo" itemSubjectRef="_54C2796E-663B-4E54-A6E9-BC6AB0D031C7" />
     <bpmn2:property id="_AB0CEA8F-00FC-4228-8F0D-675B489C85E2" name="responseTimeout" itemSubjectRef="__428739B8-C962-4EBE-A16B-6E2B5133D50B_aktivitetIdInputXItem" />
     <bpmn2:property id="_0D42CCA7-7DDE-444D-941D-ADC4B0336C6C" name="retryDelay" itemSubjectRef="__428739B8-C962-4EBE-A16B-6E2B5133D50B_aktivitetIdInputXItem" />
+    <bpmn2:property id="cancelledMessage" itemSubjectRef="regel-oul-cancelledType" name="cancelledMessage" />
     <bpmn2:laneSet id="_BB313283-51D6-4ED9-A796-B704F203A0D1" />
     <bpmn2:startEvent id="_39F10672-EEFA-4AED-9E31-2F408D704404" name="Application">
       <bpmn2:extensionElements>
@@ -129,7 +138,7 @@
       </bpmn2:inputSet>
     </bpmn2:endEvent>
     <bpmn2:endEvent id="_2D5602FC-1DBA-4886-8771-F98BEC6DEE6A">
-      <bpmn2:incoming>_C038BE00-B597-4D79-A0A3-626D257FDDAE</bpmn2:incoming>
+      <bpmn2:incoming>_3EA5BC57-0591-4134-BD13-FF745C1B0E3C</bpmn2:incoming>
       <bpmn2:dataInput id="_8FBB8114-74A2-445D-A5B9-BF8DDA383E00" name="result" drools:dtype="se.fk.rimfrost.framework.process.RegelProcessResult" itemSubjectRef="__EB1970E1-7AA3-44EC-98B2-981698344C2A_resultOutputXItem" />
       <bpmn2:dataInputAssociation id="_3BFF7513-E984-424A-BE5E-FE8D7C38E56C">
         <bpmn2:sourceRef>result</bpmn2:sourceRef>
@@ -310,6 +319,28 @@
         <bpmn2:targetRef>result</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:serviceTask>
+    <bpmn2:serviceTask id="_D3592B36-775D-471D-8976-6D8C9189E119" name="Create cancelled message" drools:serviceinterface="se.fk.rimfrost.framework.process.RegelService" operationRef="_2A176C93-6664-4A6C-94F6-DA2D5E564115" drools:serviceoperation="createRegelOulCancelled">
+      <bpmn2:incoming>_C038BE00-B597-4D79-A0A3-626D257FDDAE</bpmn2:incoming>
+      <bpmn2:outgoing>_E2FA3054-D3C2-49B2-A112-B576D9BC3998</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_C30F81FF-BA6C-4C9F-8ACA-A36995458659">
+        <bpmn2:dataInput id="_EEA07622-A1C8-4207-9BDF-42938AE93222" name="handlaggningId" drools:dtype="String" itemSubjectRef="_handlaggningIdItem" />
+        <bpmn2:dataOutput name="cancelledMessage" id="_68C17270-879D-4AAA-93EA-239FCB6E3D50" drools:dtype="se.fk.rimfrost.framework.regel.oul.RegelOulCancelledMessagePayloadData" itemSubjectRef="regel-oul-cancelledType" />
+        <bpmn2:inputSet id="_5FD1C493-698A-44AB-8B1F-41B56895A165">
+          <bpmn2:dataInputRefs>_EEA07622-A1C8-4207-9BDF-42938AE93222</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="_51B90386-C65E-4CAA-93B2-70DF28E343DA">
+          <bpmn2:dataOutputRefs>_68C17270-879D-4AAA-93EA-239FCB6E3D50</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_16EB6474-1809-4BA8-B3D3-EA569D4CC16F">
+        <bpmn2:sourceRef>handlaggningId</bpmn2:sourceRef>
+        <bpmn2:targetRef>_EEA07622-A1C8-4207-9BDF-42938AE93222</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="_0EC0C663-F9FD-44D9-8691-4FF9D3743ECF">
+        <bpmn2:sourceRef>_68C17270-879D-4AAA-93EA-239FCB6E3D50</bpmn2:sourceRef>
+        <bpmn2:targetRef>cancelledMessage</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:serviceTask>
     <bpmn2:serviceTask id="_B383C67E-9C34-446B-AA85-91531C2B154D" name="Init" drools:serviceinterface="se.fk.rimfrost.framework.process.RegelService" operationRef="_53C98969-6C7A-429F-A585-8A5841F73378" drools:serviceoperation="init">
       <bpmn2:extensionElements>
         <drools:onEntry-script scriptFormat="">
@@ -331,6 +362,19 @@
       <bpmn2:outgoing>_148D1A52-9A25-430C-9F8F-B6366C00BC32</bpmn2:outgoing>
       <bpmn2:outgoing>_623C73B2-5951-4CB1-BB7F-830722CBFFA5</bpmn2:outgoing>
     </bpmn2:serviceTask>
+    <bpmn2:intermediateThrowEvent id="_67FBFBE1-788A-409B-AAE3-276410FCB76F">
+      <bpmn2:incoming>_E2FA3054-D3C2-49B2-A112-B576D9BC3998</bpmn2:incoming>
+      <bpmn2:outgoing>_3EA5BC57-0591-4134-BD13-FF745C1B0E3C</bpmn2:outgoing>
+      <bpmn2:dataInput id="_67FBFBE1-788A-409B-AAE3-276410FCB76F_cancelledMessageInputX" name="cancelledMessage" drools:dtype="se.fk.rimfrost.framework.regel.oul.RegelOulCancelledMessagePayloadData" itemSubjectRef="regel-oul-cancelledType" />
+      <bpmn2:dataInputAssociation id="_85632042-2076-4F96-8D6A-CAA8136D0B41">
+        <bpmn2:sourceRef>cancelledMessage</bpmn2:sourceRef>
+        <bpmn2:targetRef>_67FBFBE1-788A-409B-AAE3-276410FCB76F_cancelledMessageInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:inputSet id="_EE2A7F4C-0A06-4FA6-8EE1-3B9512D41BD1">
+        <bpmn2:dataInputRefs>_67FBFBE1-788A-409B-AAE3-276410FCB76F_cancelledMessageInputX</bpmn2:dataInputRefs>
+      </bpmn2:inputSet>
+      <bpmn2:messageEventDefinition drools:msgref="rtf-manuell-oul-cancelled" messageRef="_4B097670-D119-498E-B266-60C3324730CA" />
+    </bpmn2:intermediateThrowEvent>
     <bpmn2:intermediateThrowEvent id="_E496A906-CCA2-4DAD-8E76-D5F0E5FDB341">
       <bpmn2:extensionElements>
         <drools:metaData name="replyTo">
@@ -416,7 +460,9 @@
       <bpmn2:conditionExpression id="_C7A4F1E2-9B3D-4A8E-B5C1-7F2E6D4A9B0C">return attempts &lt; maxAttempts;</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="_829CC802-EACC-4E47-BC84-72B5A3D96076" sourceRef="_39A28151-9935-47B7-87A0-2A34DBFD5D88" targetRef="_E70FD429-AA51-404D-B9ED-6B031768AC58" />
-    <bpmn2:sequenceFlow id="_C038BE00-B597-4D79-A0A3-626D257FDDAE" sourceRef="_1BF95B99-8C1A-4709-BBD5-6F9FD83AC691" targetRef="_2D5602FC-1DBA-4886-8771-F98BEC6DEE6A" />
+    <bpmn2:sequenceFlow id="_C038BE00-B597-4D79-A0A3-626D257FDDAE" sourceRef="_1BF95B99-8C1A-4709-BBD5-6F9FD83AC691" targetRef="_D3592B36-775D-471D-8976-6D8C9189E119" />
+    <bpmn2:sequenceFlow id="_E2FA3054-D3C2-49B2-A112-B576D9BC3998" sourceRef="_D3592B36-775D-471D-8976-6D8C9189E119" targetRef="_67FBFBE1-788A-409B-AAE3-276410FCB76F" />
+    <bpmn2:sequenceFlow id="_3EA5BC57-0591-4134-BD13-FF745C1B0E3C" sourceRef="_67FBFBE1-788A-409B-AAE3-276410FCB76F" targetRef="_2D5602FC-1DBA-4886-8771-F98BEC6DEE6A" />
     <bpmn2:sequenceFlow id="_7258F266-E606-45E0-B24E-A72FC2C3F11D" sourceRef="_61A0D78B-7EEA-4EF3-9BFB-4585725A77CB" targetRef="_AB6BA98E-BCBA-40F8-8779-366CD0DEFAEA" />
     <bpmn2:sequenceFlow id="_FE0C1871-FBAD-484D-92DE-2A5BFBF81EC3" sourceRef="_39F10672-EEFA-4AED-9E31-2F408D704404" targetRef="_B383C67E-9C34-446B-AA85-91531C2B154D" />
     <bpmn2:sequenceFlow id="_623C73B2-5951-4CB1-BB7F-830722CBFFA5" sourceRef="_B383C67E-9C34-446B-AA85-91531C2B154D" targetRef="_428739B8-C962-4EBE-A16B-6E2B5133D50B" />
@@ -451,16 +497,16 @@
         <dc:Bounds x="1020" y="200" width="60" height="60" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_1159ED95-63F1-4296-B16C-F8CD07BC8D18" bpmnElement="_61A0D78B-7EEA-4EF3-9BFB-4585725A77CB">
-        <dc:Bounds x="960" y="-280" width="180" height="100" />
+        <dc:Bounds x="960" y="-640" width="180" height="100" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_A45FED0A-8379-483A-AFBD-EC468996C245" bpmnElement="_143CAC07-C786-4D82-A88B-D6035116145E">
-        <dc:Bounds x="120" y="-440" width="60" height="60" />
+        <dc:Bounds x="120" y="-800" width="60" height="60" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_6E536AD7-A148-4154-B22F-E40F9AA8BFC9" bpmnElement="_AB6BA98E-BCBA-40F8-8779-366CD0DEFAEA">
-        <dc:Bounds x="540" y="-280" width="180" height="100" />
+        <dc:Bounds x="540" y="-640" width="180" height="100" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_A3C65407-5E56-4958-BF74-C96FB0A7798F" bpmnElement="_4DE1798E-95DE-470C-98C3-D52977347154">
-        <dc:Bounds x="120" y="-260" width="60" height="60" />
+        <dc:Bounds x="120" y="-620" width="60" height="60" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_87025568-3172-412E-9262-93A694F6585F" bpmnElement="_CBA08734-6CE1-4C31-AF6B-B8BE078BF4F8">
         <dc:Bounds x="600" y="200" width="60" height="60" />
@@ -472,7 +518,7 @@
         <dc:Bounds x="540" y="-40" width="180" height="100" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_550AB097-8798-4846-A917-DBE1434B5758" bpmnElement="_11EFEF6F-2EEE-4D8E-975B-B9A557A68743">
-        <dc:Bounds x="600" y="-260" width="60" height="60" />
+        <dc:Bounds x="600" y="-620" width="60" height="60" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_AE5F1DC2-4722-4A32-AC90-6B0100F117AD" bpmnElement="_39A28151-9935-47B7-87A0-2A34DBFD5D88">
         <dc:Bounds x="120" y="80" width="60" height="60" />
@@ -553,7 +599,7 @@
         <dc:Bounds x="-300" y="-40" width="60" height="60" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_64D49D32-A6B2-4289-B689-76E8E25D2D4C" bpmnElement="_2D5602FC-1DBA-4886-8771-F98BEC6DEE6A">
-        <dc:Bounds x="600" y="-140" width="60" height="60" />
+        <dc:Bounds x="600" y="-500" width="60" height="60" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_513E1DA5-1FE5-4C90-891D-D7292E89C09D" bpmnElement="_F50CDF24-F777-4EE5-9850-C05425A5CC08">
         <dc:Bounds x="-520" y="400" width="60" height="60" />
@@ -569,6 +615,12 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_79BA7BB5-D827-4AA6-95A3-73ECB8CD587F" bpmnElement="_46065DFA-002E-4955-8531-A3D0970C905C">
         <dc:Bounds x="-240" y="-20" width="60" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_831C7128-4AB2-4E80-834C-6ACC2F07D5BD" bpmnElement="_D3592B36-775D-471D-8976-6D8C9189E119">
+        <dc:Bounds x="540" y="-200" width="180" height="100" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_22CAA8C8-CC2F-49D3-810D-4A64137ECA59" bpmnElement="_67FBFBE1-788A-409B-AAE3-276410FCB76F">
+        <dc:Bounds x="602" y="-330" width="56" height="56" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="_DA18ED44-AD82-4820-A88F-B0B361CC08D5" bpmnElement="_EA91DB89-488A-498E-8D80-CD7BC5EBF35D">
         <di:waypoint x="1237" y="231" />
@@ -593,16 +645,16 @@
       <bpmndi:BPMNEdge id="_D1DEF746-0D36-44F2-9E73-EC949125E495" bpmnElement="_F25C9C2A-EC95-4107-8A38-A3F51A3A8D32" sourceElement="_B37EF944-0313-48BE-9121-16A6C6F12DBE" targetElement="_1159ED95-63F1-4296-B16C-F8CD07BC8D18">
         <di:waypoint x="1050" y="230" />
         <di:waypoint x="1050" y="80" />
-        <di:waypoint x="1050" y="-180" />
+        <di:waypoint x="1050" y="-540" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_EA03E169-EC37-4A2E-8A46-5AA8A681EDA6" bpmnElement="_F280511B-99FF-49F1-9920-43942E1AD092" sourceElement="_6E536AD7-A148-4154-B22F-E40F9AA8BFC9" targetElement="_A3C65407-5E56-4958-BF74-C96FB0A7798F">
-        <di:waypoint x="630" y="-230" />
-        <di:waypoint x="180" y="-230" />
+        <di:waypoint x="630" y="-590" />
+        <di:waypoint x="180" y="-590" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_A489C288-B518-4D26-8BEE-61586519E671" bpmnElement="_8E1AE177-7C6A-47D7-9A44-E8FCC8B80656" sourceElement="_A3C65407-5E56-4958-BF74-C96FB0A7798F" targetElement="_A45FED0A-8379-483A-AFBD-EC468996C245">
-        <di:waypoint x="150" y="-230" />
-        <di:waypoint x="150" y="-340" />
-        <di:waypoint x="150" y="-380" />
+        <di:waypoint x="150" y="-590" />
+        <di:waypoint x="150" y="-700" />
+        <di:waypoint x="150" y="-740" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_61661959-F51A-4492-B8AA-5BB9C95D8959" bpmnElement="_1274A8F0-6C31-4826-B0B2-C1E8FFEE395E" sourceElement="shape__E496A906-CCA2-4DAD-8E76-D5F0E5FDB341" targetElement="_87025568-3172-412E-9262-93A694F6585F">
         <di:waypoint x="428" y="228" />
@@ -621,7 +673,7 @@
         <di:waypoint x="630" y="60" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_CB32832B-D11D-471F-A704-1BF50DB8685E" bpmnElement="_9283A46D-B92A-45C6-89E8-2BAEA3B3F9ED" sourceElement="_A3C65407-5E56-4958-BF74-C96FB0A7798F" targetElement="_AE5F1DC2-4722-4A32-AC90-6B0100F117AD">
-        <di:waypoint x="150" y="-230" />
+        <di:waypoint x="150" y="-590" />
         <di:waypoint x="150" y="0" />
         <di:waypoint x="150" y="80" />
       </bpmndi:BPMNEdge>
@@ -629,13 +681,21 @@
         <di:waypoint x="150" y="110" />
         <di:waypoint x="150" y="200" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="_2C991611-3594-42B5-81C7-947CC655246F" bpmnElement="_C038BE00-B597-4D79-A0A3-626D257FDDAE" sourceElement="_E1E677AF-4586-4246-A44A-6ABD55E066DA" targetElement="_64D49D32-A6B2-4289-B689-76E8E25D2D4C">
-        <di:waypoint x="630" y="10" />
-        <di:waypoint x="630" y="-80" />
+      <bpmndi:BPMNEdge id="_2C991611-3594-42B5-81C7-947CC655246F" bpmnElement="_C038BE00-B597-4D79-A0A3-626D257FDDAE" sourceElement="_E1E677AF-4586-4246-A44A-6ABD55E066DA" targetElement="_831C7128-4AB2-4E80-834C-6ACC2F07D5BD">
+        <di:waypoint x="630" y="-40" />
+        <di:waypoint x="630" y="-100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_0629DFA0-7395-4E87-9BA3-29530A90D7BB" bpmnElement="_E2FA3054-D3C2-49B2-A112-B576D9BC3998" sourceElement="_831C7128-4AB2-4E80-834C-6ACC2F07D5BD" targetElement="_22CAA8C8-CC2F-49D3-810D-4A64137ECA59">
+        <di:waypoint x="630" y="-200" />
+        <di:waypoint x="630" y="-274" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_AC09524A-8665-4AB8-A326-2ADDE7104370" bpmnElement="_3EA5BC57-0591-4134-BD13-FF745C1B0E3C" sourceElement="_22CAA8C8-CC2F-49D3-810D-4A64137ECA59" targetElement="_64D49D32-A6B2-4289-B689-76E8E25D2D4C">
+        <di:waypoint x="630" y="-330" />
+        <di:waypoint x="630" y="-440" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_67C868AB-DD14-4716-9C51-CF73DE644A7F" bpmnElement="_7258F266-E606-45E0-B24E-A72FC2C3F11D" sourceElement="_1159ED95-63F1-4296-B16C-F8CD07BC8D18" targetElement="_6E536AD7-A148-4154-B22F-E40F9AA8BFC9">
-        <di:waypoint x="1050" y="-230" />
-        <di:waypoint x="720" y="-230" />
+        <di:waypoint x="1050" y="-590" />
+        <di:waypoint x="720" y="-590" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_36D1AEAE-E517-4E8E-A313-1D346C56D274" bpmnElement="_FE0C1871-FBAD-484D-92DE-2A5BFBF81EC3" sourceElement="shape__39F10672-EEFA-4AED-9E31-2F408D704404" targetElement="_06AB3FF0-32F4-4612-A72A-A54A659367B8">
         <di:waypoint x="-170" y="230" />
