@@ -2,6 +2,20 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.14 (2026-11-13)
+
+### Bug Fixes
+
+-  send oul cancel on timeout ([1fdc6](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/1fdc69b13e10b2b) Nils Elveros)  
+
+### Other changes
+
+**Merge branch 'main' into fix/FKPOC-1295-send-oul-cancel**
+
+
+[11be3](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/11be33a0eed9528) NilsElveros *2026-11-13 10:12:57*
+
+
 ## 1.1.13 (2026-11-13)
 
 ### Bug Fixes
