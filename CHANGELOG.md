@@ -2,6 +2,12 @@
 
 Changelog of rimfrost-regel-rtf-manuell-subprocess.
 
+## 1.1.13 (2026-11-13)
+
+### Bug Fixes
+
+-  Use separate consumer group for komplettering ([3d311](https://github.com/Forsakringskassan/rimfrost-regel-rtf-manuell-subprocess/commit/3d311cbb357bdbd) Lars Persson)  
+
 ## 1.1.12 (2026-11-10)
 
 ### Bug Fixes
