@@ -11,6 +11,7 @@
     <property id="_31C6021B-00C0-45AE-AC42-479888845089" name="result" itemSubjectRef="_FE7D85A7-C00D-4DEF-9567-209E4A627C39" />
     <property id="_BCE8671A-129E-450C-82CD-A457EC92C00F" name="retryDelay" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
     <property id="_5F7B0790-5B6A-4E0A-A3F4-3A0F197CAD73" name="responseTimeout" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+    <property id="_B752A722-87B3-46E2-88DD-59D5CD3FA499" name="handlaggningInstanceBaseUrl" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
     <startEvent id="_EB732231-2388-4BA5-8922-F5BE5E78B7C9">
       <outgoing>_4D598AC1-8372-4C75-A15B-3B87D9E88744</outgoing>
     </startEvent>
@@ -38,92 +39,104 @@
     <callActivity id="_18A4768B-E3B8-45B1-90DC-D13AA578AED2" name="Komplettering" calledElement="rtf_manuell_komplettering">
       <incoming>_4D598AC1-8372-4C75-A15B-3B87D9E88744</incoming>
       <outgoing>_64D21239-C8FB-494A-A70F-886CCCA4574D</outgoing>
-      <ioSpecification id="_757B30A2-7B22-4D51-AF12-6E0227886328">
-        <dataInput id="_27C7FDF9-C86C-46B3-87AE-F66181D8E1F9" name="handlaggningId" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
-        <dataInput id="_F4E8CB33-770A-47AE-95CD-C6FDA205F6BA" name="aktivitetId" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
-        <dataInput id="_0B72458A-F32C-45DE-AC25-F8FB96F978BC" name="maxAttempts" drools:dtype="Integer" itemSubjectRef="_A95E2B92-BEC4-4008-BCC6-E10DD6261C78" />
-        <dataInput id="_3BC4849B-B56F-494E-8238-92D24BCB6464" name="retryDelay" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
-        <dataInput id="_4C75F6F9-1F35-4993-894F-EDB73A21B073" name="responseTimeout" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
-        <dataOutput name="result" id="_2EF74DC6-6BA4-4618-A87B-25BD1D1DEDD8" drools:dtype="se.fk.rimfrost.framework.process.RegelProcessResult" itemSubjectRef="_FE7D85A7-C00D-4DEF-9567-209E4A627C39" />
-        <inputSet id="_59A43C48-3EF5-4A8A-A677-4F991C7DD78E">
-          <dataInputRefs>_27C7FDF9-C86C-46B3-87AE-F66181D8E1F9</dataInputRefs>
-          <dataInputRefs>_F4E8CB33-770A-47AE-95CD-C6FDA205F6BA</dataInputRefs>
-          <dataInputRefs>_0B72458A-F32C-45DE-AC25-F8FB96F978BC</dataInputRefs>
-          <dataInputRefs>_3BC4849B-B56F-494E-8238-92D24BCB6464</dataInputRefs>
-          <dataInputRefs>_4C75F6F9-1F35-4993-894F-EDB73A21B073</dataInputRefs>
+      <ioSpecification id="_4CB490A2-E80D-4C11-9C93-A01F51811957">
+        <dataInput id="_50FE5C12-CF8F-4D4D-988D-BC34DCE67892" name="handlaggningId" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+        <dataInput id="_0E3974D2-57D9-4125-8D7C-516AE629D821" name="aktivitetId" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+        <dataInput id="_94AB785C-DB8D-46EE-AD23-1C5BEE36C30C" name="maxAttempts" drools:dtype="Integer" itemSubjectRef="_A95E2B92-BEC4-4008-BCC6-E10DD6261C78" />
+        <dataInput id="_23CE9DFB-B7CF-44FD-B082-C196C86936BC" name="retryDelay" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+        <dataInput id="_2F8647AE-9929-4236-A3C1-F2677E41A45D" name="responseTimeout" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+        <dataInput id="_49CADB3F-F2D1-48B0-BC8D-E80C2DEE4834" name="handlaggningInstanceBaseUrl" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+        <dataOutput name="result" id="_3B1A39B7-4F07-442C-82C9-89BBB59091E4" drools:dtype="se.fk.rimfrost.framework.process.RegelProcessResult" itemSubjectRef="_FE7D85A7-C00D-4DEF-9567-209E4A627C39" />
+        <inputSet id="_38A3F0A0-4A41-4010-8609-A394B189BDFD">
+          <dataInputRefs>_50FE5C12-CF8F-4D4D-988D-BC34DCE67892</dataInputRefs>
+          <dataInputRefs>_0E3974D2-57D9-4125-8D7C-516AE629D821</dataInputRefs>
+          <dataInputRefs>_94AB785C-DB8D-46EE-AD23-1C5BEE36C30C</dataInputRefs>
+          <dataInputRefs>_23CE9DFB-B7CF-44FD-B082-C196C86936BC</dataInputRefs>
+          <dataInputRefs>_2F8647AE-9929-4236-A3C1-F2677E41A45D</dataInputRefs>
+          <dataInputRefs>_49CADB3F-F2D1-48B0-BC8D-E80C2DEE4834</dataInputRefs>
         </inputSet>
-        <outputSet id="_34AFAC79-A246-4480-A4FE-ED7E060F5C43">
-          <dataOutputRefs>_2EF74DC6-6BA4-4618-A87B-25BD1D1DEDD8</dataOutputRefs>
+        <outputSet id="_7D3823A3-A8D2-4E7D-802B-CBA3AA8680A6">
+          <dataOutputRefs>_3B1A39B7-4F07-442C-82C9-89BBB59091E4</dataOutputRefs>
         </outputSet>
       </ioSpecification>
-      <dataInputAssociation id="_A5A29E6A-4ACB-4DE5-8540-D7F5FDFC1529">
+      <dataInputAssociation id="_A171A9D0-2DBC-4222-87D6-907759EFCE6A">
         <sourceRef>_BD718443-BB3C-4EB8-81F2-D5DF4B679FA4</sourceRef>
-        <targetRef>_27C7FDF9-C86C-46B3-87AE-F66181D8E1F9</targetRef>
+        <targetRef>_50FE5C12-CF8F-4D4D-988D-BC34DCE67892</targetRef>
       </dataInputAssociation>
-      <dataInputAssociation id="_1EE0A3A5-C8A0-4A94-84EF-CCDF63C36192">
+      <dataInputAssociation id="_D1D3DDD1-5DA4-4918-938E-521741B72888">
         <sourceRef>_7EE79AEE-73F5-494B-B02E-7E0659485C14</sourceRef>
-        <targetRef>_F4E8CB33-770A-47AE-95CD-C6FDA205F6BA</targetRef>
+        <targetRef>_0E3974D2-57D9-4125-8D7C-516AE629D821</targetRef>
       </dataInputAssociation>
-      <dataInputAssociation id="_72450982-3BFC-4D01-8406-A19A37CD4F65">
+      <dataInputAssociation id="_1815697B-8D4E-4809-BB1D-80AA9254CE50">
         <sourceRef>_6A9EF71C-0202-4FC2-88CF-79EB1EE151A5</sourceRef>
-        <targetRef>_0B72458A-F32C-45DE-AC25-F8FB96F978BC</targetRef>
+        <targetRef>_94AB785C-DB8D-46EE-AD23-1C5BEE36C30C</targetRef>
       </dataInputAssociation>
-      <dataInputAssociation id="_E7E78B3B-6932-4FCC-8756-32BFA2E006E0">
+      <dataInputAssociation id="_B99FE2B7-5CB5-482C-AC86-5B0E0A3FB471">
         <sourceRef>_BCE8671A-129E-450C-82CD-A457EC92C00F</sourceRef>
-        <targetRef>_3BC4849B-B56F-494E-8238-92D24BCB6464</targetRef>
+        <targetRef>_23CE9DFB-B7CF-44FD-B082-C196C86936BC</targetRef>
       </dataInputAssociation>
-      <dataInputAssociation id="_EAFE6E5B-743D-4DF0-A0C3-53A6C69DFB07">
+      <dataInputAssociation id="_9980D7E1-AD8F-4F95-BA8B-1F6918167C8D">
         <sourceRef>_5F7B0790-5B6A-4E0A-A3F4-3A0F197CAD73</sourceRef>
-        <targetRef>_4C75F6F9-1F35-4993-894F-EDB73A21B073</targetRef>
+        <targetRef>_2F8647AE-9929-4236-A3C1-F2677E41A45D</targetRef>
       </dataInputAssociation>
-      <dataOutputAssociation id="_7AA050B4-6EB0-49E3-86A2-380AC07E078C">
-        <sourceRef>_2EF74DC6-6BA4-4618-A87B-25BD1D1DEDD8</sourceRef>
+      <dataInputAssociation id="_D0AC3D5F-045D-4B21-8398-6AD41C7B0582">
+        <sourceRef>_B752A722-87B3-46E2-88DD-59D5CD3FA499</sourceRef>
+        <targetRef>_49CADB3F-F2D1-48B0-BC8D-E80C2DEE4834</targetRef>
+      </dataInputAssociation>
+      <dataOutputAssociation id="_38B0EE45-83FD-4D92-87D1-7E1881C90EB7">
+        <sourceRef>_3B1A39B7-4F07-442C-82C9-89BBB59091E4</sourceRef>
         <targetRef>_31C6021B-00C0-45AE-AC42-479888845089</targetRef>
       </dataOutputAssociation>
     </callActivity>
     <callActivity id="_BFFD4183-9673-4CAD-9C4A-BA974B501116" name="Regel" calledElement="rtf_manuell_regel">
       <incoming>_1B35E534-D019-4D86-A8E1-AC4BC46C4C70</incoming>
       <outgoing>_7FC9CE05-97A4-48A7-A0A3-3195936FE654</outgoing>
-      <ioSpecification id="_9C22DF56-D8A8-4063-A901-FFA1C67D71A9">
-        <dataInput id="_FE411FE1-8228-4FD3-BF9D-31826868AC0C" name="handlaggningId" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
-        <dataInput id="_F9C9F3D6-735E-4FF9-BC6C-3A3FBCA1579B" name="aktivitetId" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
-        <dataInput id="_76D4A1B7-462E-4060-8649-42A702197595" name="maxAttempts" drools:dtype="Integer" itemSubjectRef="_A95E2B92-BEC4-4008-BCC6-E10DD6261C78" />
-        <dataInput id="_4F40D139-5E9D-419D-AD12-6ADA3F62CBBE" name="retryDelay" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
-        <dataInput id="_C33BA63D-EB6A-4D8D-8924-2A5D57FD9A30" name="responseTimeout" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
-        <dataOutput name="result" id="_F04DEC9B-2A01-46F1-8B30-B874D9B32179" drools:dtype="se.fk.rimfrost.framework.process.RegelProcessResult" itemSubjectRef="_FE7D85A7-C00D-4DEF-9567-209E4A627C39" />
-        <inputSet id="_C97D93C5-42AE-43F3-AC4A-5060010AA753">
-          <dataInputRefs>_FE411FE1-8228-4FD3-BF9D-31826868AC0C</dataInputRefs>
-          <dataInputRefs>_F9C9F3D6-735E-4FF9-BC6C-3A3FBCA1579B</dataInputRefs>
-          <dataInputRefs>_76D4A1B7-462E-4060-8649-42A702197595</dataInputRefs>
-          <dataInputRefs>_4F40D139-5E9D-419D-AD12-6ADA3F62CBBE</dataInputRefs>
-          <dataInputRefs>_C33BA63D-EB6A-4D8D-8924-2A5D57FD9A30</dataInputRefs>
+      <ioSpecification id="_8AB5A37C-D009-4902-89DE-333E7CED0EB0">
+        <dataInput id="_A65C613D-C932-4FBF-A99E-82E35C365CA5" name="handlaggningId" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+        <dataInput id="_81A5A639-F699-496A-91AD-FA6FF48C3398" name="aktivitetId" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+        <dataInput id="_8F2DDF85-C907-43B4-980C-B41F2884BA7B" name="maxAttempts" drools:dtype="Integer" itemSubjectRef="_A95E2B92-BEC4-4008-BCC6-E10DD6261C78" />
+        <dataInput id="_0C3F57F0-BA7B-4966-B867-1FEC1CE6E11E" name="retryDelay" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+        <dataInput id="_6F88FDE2-6ECB-4E0B-BE60-54FC147510CF" name="responseTimeout" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+        <dataInput id="_37120605-61D9-4D57-A254-171C228B5271" name="handlaggningInstanceBaseUrl" drools:dtype="String" itemSubjectRef="_013C1E31-8206-43A6-98A8-4CB79CF499C7" />
+        <dataOutput name="result" id="_51934C7D-FF01-45B6-8B51-CAC8BCD2CCCF" drools:dtype="se.fk.rimfrost.framework.process.RegelProcessResult" itemSubjectRef="_FE7D85A7-C00D-4DEF-9567-209E4A627C39" />
+        <inputSet id="_13035761-9EC8-4058-8C0F-AC9158436826">
+          <dataInputRefs>_A65C613D-C932-4FBF-A99E-82E35C365CA5</dataInputRefs>
+          <dataInputRefs>_81A5A639-F699-496A-91AD-FA6FF48C3398</dataInputRefs>
+          <dataInputRefs>_8F2DDF85-C907-43B4-980C-B41F2884BA7B</dataInputRefs>
+          <dataInputRefs>_0C3F57F0-BA7B-4966-B867-1FEC1CE6E11E</dataInputRefs>
+          <dataInputRefs>_6F88FDE2-6ECB-4E0B-BE60-54FC147510CF</dataInputRefs>
+          <dataInputRefs>_37120605-61D9-4D57-A254-171C228B5271</dataInputRefs>
         </inputSet>
-        <outputSet id="_478911D5-1AD8-4212-BF31-2B0C138F371F">
-          <dataOutputRefs>_F04DEC9B-2A01-46F1-8B30-B874D9B32179</dataOutputRefs>
+        <outputSet id="_F22EA8F0-FCF8-4A16-A5B2-8C620969BC68">
+          <dataOutputRefs>_51934C7D-FF01-45B6-8B51-CAC8BCD2CCCF</dataOutputRefs>
         </outputSet>
       </ioSpecification>
-      <dataInputAssociation id="_BBA3E468-7C5D-4AFE-940E-6E15398CA856">
+      <dataInputAssociation id="_F65B5FED-BA7C-4EA4-84A2-023B0B501693">
         <sourceRef>_BD718443-BB3C-4EB8-81F2-D5DF4B679FA4</sourceRef>
-        <targetRef>_FE411FE1-8228-4FD3-BF9D-31826868AC0C</targetRef>
+        <targetRef>_A65C613D-C932-4FBF-A99E-82E35C365CA5</targetRef>
       </dataInputAssociation>
-      <dataInputAssociation id="_E1202001-7B84-4A7E-AFBF-DD540BDBC97C">
+      <dataInputAssociation id="_666BBB2F-E777-47FF-A6C5-9E65B053E50A">
         <sourceRef>_7EE79AEE-73F5-494B-B02E-7E0659485C14</sourceRef>
-        <targetRef>_F9C9F3D6-735E-4FF9-BC6C-3A3FBCA1579B</targetRef>
+        <targetRef>_81A5A639-F699-496A-91AD-FA6FF48C3398</targetRef>
       </dataInputAssociation>
-      <dataInputAssociation id="_87951CD1-CCF3-41F0-A960-74ECE70A9E7E">
+      <dataInputAssociation id="_E51F98D1-DA29-4773-AEB8-F4FA1C54D7F4">
         <sourceRef>_6A9EF71C-0202-4FC2-88CF-79EB1EE151A5</sourceRef>
-        <targetRef>_76D4A1B7-462E-4060-8649-42A702197595</targetRef>
+        <targetRef>_8F2DDF85-C907-43B4-980C-B41F2884BA7B</targetRef>
       </dataInputAssociation>
-      <dataInputAssociation id="_816DE07D-BA65-4C1D-8E28-C429F1F3A959">
+      <dataInputAssociation id="_68EE6DB7-AB38-4FD2-A31E-C467FFA8077E">
         <sourceRef>_BCE8671A-129E-450C-82CD-A457EC92C00F</sourceRef>
-        <targetRef>_4F40D139-5E9D-419D-AD12-6ADA3F62CBBE</targetRef>
+        <targetRef>_0C3F57F0-BA7B-4966-B867-1FEC1CE6E11E</targetRef>
       </dataInputAssociation>
-      <dataInputAssociation id="_FA2A6815-F073-4D93-93CB-EC4539450D1E">
+      <dataInputAssociation id="_2599A633-5C2E-48C9-B34B-33F37D2D0B86">
         <sourceRef>_5F7B0790-5B6A-4E0A-A3F4-3A0F197CAD73</sourceRef>
-        <targetRef>_C33BA63D-EB6A-4D8D-8924-2A5D57FD9A30</targetRef>
+        <targetRef>_6F88FDE2-6ECB-4E0B-BE60-54FC147510CF</targetRef>
       </dataInputAssociation>
-      <dataOutputAssociation id="_A6888175-7C8A-49F9-8E50-FB341E9C4479">
-        <sourceRef>_F04DEC9B-2A01-46F1-8B30-B874D9B32179</sourceRef>
+      <dataInputAssociation id="_A9D692CD-B32C-4E4A-BAD5-600989FC48BE">
+        <sourceRef>_B752A722-87B3-46E2-88DD-59D5CD3FA499</sourceRef>
+        <targetRef>_37120605-61D9-4D57-A254-171C228B5271</targetRef>
+      </dataInputAssociation>
+      <dataOutputAssociation id="_B5E239D4-C781-47B6-80C7-A17A71800F04">
+        <sourceRef>_51934C7D-FF01-45B6-8B51-CAC8BCD2CCCF</sourceRef>
         <targetRef>_31C6021B-00C0-45AE-AC42-479888845089</targetRef>
       </dataOutputAssociation>
     </callActivity>
